@@ -1,0 +1,428 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* COLORS */
+:root {
+  --primary: #ffd000;
+  --dark: #111;
+  --light: #fff;
+}
+
+/* BODY */
+body {
+  background: var(--light);
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* NAV */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--dark);
+  color: white;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+}
+
+/* HERO */
+.hero {
+  position: relative;
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1581091215367-59ab6b1f63c0') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero__logo {
+  width: 120px;
+  margin-bottom: 20px;
+  animation: float 3s ease-in-out infinite;
+}
+
+/* subtle float animation */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+/* dark overlay */
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+/* content sits above overlay */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero p {
+  margin-bottom: 20px;
+  color: #ddd;
+}
+
+/* BUTTONS */
+.btn-primary {
+  background: var(--primary);
+  padding: 12px 24px;
+  border: none;
+  margin-right: 10px;
+}
+
+.btn-secondary {
+  border: 2px solid white;
+  padding: 12px 24px;
+  background: transparent;
+  color: white;
+}
+
+button {
+   padding: 12px 18px;
+  background: #f59e0b;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+    border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background: #1d4ed8;
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* SECTION */
+.courses {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.courses h2 {
+  margin-bottom: 40px;
+  font-size: 32px;
+}
+
+
+.courses__grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+
+.course-card {
+  background: white;
+  padding: 25px;
+  width: 300px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.course-card:hover .price {
+  transform: scale(1.1);
+}
+
+
+.course-sub {
+  color: #777;
+  margin: 10px 0;
+}
+
+.about__content {
+  max-width: 500px;
+  text-align: left;
+}
+
+.about__content h2 {
+  margin-bottom: 15px;
+}
+
+.about__content p {
+  margin-bottom: 15px;
+  color: #555;
+}
+
+
+.course-features {
+  list-style: none;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.course-features li {
+  margin-bottom: 8px;
+}
+
+/* CARD POSITION FIX */
+.course-card {
+  position: relative;
+}
+
+/* PRICE */
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* FOOTER */
+.course-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* BADGE */
+.badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: var(--primary);
+  color: black;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* ABOUT */
+.about {
+  padding: 100px 20px;
+}
+
+/* LAYOUT */
+.about__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+/* IMAGE */
+.about__img img {
+  width: 350px;
+  border-radius: 10px;
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.nav__logo:hover {
+  transform: scale(1.05);
+}
+
+.nav__logo img {
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.nav__logo:hover img {
+  transform: rotate(-5deg) scale(1.1);
+}
+
+.nav__logo span {
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+}
+
+/* SECTION */
+.testimonials {
+  padding: 100px 20px;
+  text-align: center;
+  background: #f9f9f9;
+}
+
+.testimonials h2 {
+  margin-bottom: 40px;
+}
+
+section {
+  margin-bottom: 60px;
+  padding: 60px 20px;
+}
+
+/* GRID */
+.testimonials__grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* CARD */
+.testimonial-card {
+  background: white;
+  padding: 20px;
+  width: 280px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+}
+
+/* SECTION */
+.signup {
+  padding: 100px 20px;
+  text-align: center;
+  background: var(--dark);
+  color: white;
+}
+
+.signup p {
+  margin-bottom: 20px;
+  color: #ccc;
+}
+
+/* FORM */
+.signup__form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* INPUTS */
+.signup__form input {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  outline: none;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* BUTTON */
+.signup__form button {
+  margin-top: 10px;
+}
+
+.footer {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+@media (max-width: 768px) {
+
+  /* NAV */
+  .nav {
+    padding: 10px 15px;
+  }
+
+  .nav ul {
+    gap: 15px;
+  }
+
+  /* HERO TEXT */
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  /* BUTTON STACK */
+  .hero__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* ABOUT STACK */
+  .about__container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about__content {
+    text-align: center;
+  }
+
+  /* CARDS FULL WIDTH */
+  .course-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.8s ease;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
