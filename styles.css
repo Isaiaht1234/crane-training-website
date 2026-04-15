@@ -9,6 +9,14 @@ html {
   scroll-behavior: smooth;
 }
 
+html, body {
+  height: 100%;
+}
+
+main {
+  flex: 1;
+}
+
 /* COLORS */
 :root {
   --primary: #ffd000;
@@ -20,6 +28,9 @@ html {
 body {
   background: var(--light);
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .container {
@@ -292,7 +303,7 @@ button:active {
 }
 
 section {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
   padding: 60px 20px;
 }
 
@@ -320,10 +331,12 @@ section {
 
 /* SECTION */
 .signup {
-  padding: 100px 20px;
-  text-align: center;
-  background: var(--dark);
-  color: white;
+  padding: 40px 20px;
+  margin: 0;
+}
+
+.signup h2 {
+  margin-bottom: 10px;
 }
 
 .signup p {
@@ -369,6 +382,7 @@ section {
   color: white;
   text-align: center;
   padding: 20px;
+  margin-top: 0;
 }
 
 @media (max-width: 768px) {
